@@ -1,7 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from 'react';
+import '../styles/globals.scss';
+import type { AppProps, NextWebVitalsMetric } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
-export default MyApp
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <Component {...pageProps} />
+);
+
+export const reportWebVitals = (metric: NextWebVitalsMetric) => {
+  console.log(metric);
+};
+
+export default MyApp;
